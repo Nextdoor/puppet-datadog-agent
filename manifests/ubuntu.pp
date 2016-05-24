@@ -43,7 +43,7 @@ class datadog_agent::ubuntu(
   }
 
   package { 'datadog-agent':
-    ensure  => latest,
+    ensure  => present,
     require => [File['/etc/apt/sources.list.d/datadog.list'],
                 Exec['datadog_apt-get_update']],
   }
